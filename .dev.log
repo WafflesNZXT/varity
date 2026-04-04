@@ -1,0 +1,163 @@
+
+> varity@0.1.0 predev
+> node scripts/clean-next.cjs
+
+[clean-next] Removed .next cache
+
+> varity@0.1.0 dev
+> next dev -p 3000
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1893ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3.2s (841 modules)
+ HEAD / 200 in 438ms
+ GET / 200 in 3431ms
+ ○ Compiling /api/auth/[...nextauth] ...
+ ✓ Compiled /api/auth/[...nextauth] in 1647ms (540 modules)
+ GET /api/auth/session 200 in 2158ms
+ GET /api/auth/session 200 in 14ms
+ GET /api/auth/providers 200 in 15ms
+ GET /api/auth/csrf 200 in 7ms
+(node:28736) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ POST /api/auth/callback/credentials 200 in 1800ms
+ GET /api/auth/session 200 in 14ms
+ ○ Compiling /chat ...
+ ✓ Compiled /chat in 1683ms (1362 modules)
+ GET /chat?_rsc=vdq9z 200 in 18ms
+ ✓ Compiled /api/chats in 176ms (814 modules)
+ GET /api/chats 200 in 236ms
+ ✓ Compiled /api/chats/[chatId] in 171ms (816 modules)
+ GET /api/chats 200 in 437ms
+ GET /api/chats/44ecb7fb-042b-4f6b-9e47-c26b6ea62383 200 in 641ms
+ GET /api/auth/session 200 in 19ms
+ ✓ Compiled /api/chat in 218ms (814 modules)
+ POST /api/chat 200 in 1543ms
+ POST /api/chat 200 in 1335ms
+ ✓ Compiled in 478ms (1376 modules)
+ GET /chat?_rsc=vdq9z 200 in 68ms
+ ✓ Compiled in 477ms (1372 modules)
+ GET /chat?_rsc=vdq9z 200 in 106ms
+ ✓ Compiled in 401ms (1372 modules)
+ GET /chat?_rsc=vdq9z 200 in 106ms
+ ✓ Compiled /_not-found in 357ms (1361 modules)
+ GET /_next/static/css/app/layout.css 404 in 482ms
+ GET /chat 200 in 6ms
+ GET /chat 200 in 167ms
+ GET /_next/static/css/app/layout.css?v=1775287629905 404 in 47ms
+ GET /_next/static/chunks/main-app.js?v=1775287629905 404 in 44ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 42ms
+ GET /_next/static/chunks/app/global-error.js 404 in 35ms
+ GET /_next/static/chunks/app/error.js 404 in 40ms
+ GET /_next/static/chunks/app/not-found.js 404 in 39ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 86ms
+ GET /chat 200 in 73ms
+ GET /_next/static/css/app/layout.css?v=1775287632713 404 in 17ms
+ GET /_next/static/chunks/main-app.js?v=1775287632713 404 in 34ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 34ms
+ GET /_next/static/chunks/app/error.js 404 in 33ms
+ GET /_next/static/chunks/app/not-found.js 404 in 28ms
+ GET /_next/static/chunks/app/global-error.js 404 in 29ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 81ms
+ GET /chat 200 in 56ms
+ GET /_next/static/css/app/layout.css?v=1775287633418 404 in 21ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 29ms
+ GET /_next/static/chunks/main-app.js?v=1775287633418 404 in 32ms
+ GET /_next/static/chunks/app/error.js 404 in 29ms
+ GET /_next/static/chunks/app/not-found.js 404 in 28ms
+ GET /_next/static/chunks/app/global-error.js 404 in 26ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 72ms
+ GET /chat 200 in 78ms
+ GET /_next/static/css/app/layout.css?v=1775287633954 404 in 21ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 32ms
+ GET /_next/static/chunks/app/not-found.js 404 in 27ms
+ GET /_next/static/chunks/app/error.js 404 in 31ms
+ GET /_next/static/chunks/main-app.js?v=1775287633954 404 in 32ms
+ GET /_next/static/chunks/app/global-error.js 404 in 26ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 86ms
+ GET /chat 200 in 37ms
+ GET /_next/static/css/app/layout.css?v=1775287634598 404 in 18ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 39ms
+ GET /_next/static/chunks/main-app.js?v=1775287634598 404 in 41ms
+ GET /_next/static/chunks/app/error.js 404 in 36ms
+ GET /_next/static/chunks/app/not-found.js 404 in 27ms
+ GET /_next/static/chunks/app/global-error.js 404 in 25ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 62ms
+ GET /chat 200 in 66ms
+ GET /_next/static/css/app/layout.css?v=1775287635154 404 in 17ms
+ GET /_next/static/chunks/main-app.js?v=1775287635154 404 in 35ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 33ms
+ GET /_next/static/chunks/app/error.js 404 in 34ms
+ GET /_next/static/chunks/app/not-found.js 404 in 30ms
+ GET /_next/static/chunks/app/global-error.js 404 in 29ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 84ms
+ GET /chat 200 in 29ms
+ GET /_next/static/css/app/layout.css?v=1775287640200 404 in 20ms
+ GET /_next/static/chunks/main-app.js?v=1775287640200 404 in 36ms
+ GET /_next/static/chunks/app/error.js 404 in 35ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 36ms
+ GET /_next/static/chunks/app/not-found.js 404 in 34ms
+ GET /_next/static/chunks/app/global-error.js 404 in 33ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 48ms
+ GET /chat 200 in 30ms
+ GET /_next/static/css/app/layout.css?v=1775287640674 404 in 23ms
+ GET /_next/static/chunks/main-app.js?v=1775287640674 404 in 38ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 36ms
+ GET /_next/static/chunks/app/error.js 404 in 35ms
+ GET /_next/static/chunks/app/not-found.js 404 in 31ms
+ GET /_next/static/chunks/app/global-error.js 404 in 30ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 59ms
+ GET /chat 200 in 62ms
+ GET /_next/static/css/app/layout.css?v=1775287640894 404 in 22ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 35ms
+ GET /_next/static/chunks/main-app.js?v=1775287640894 404 in 38ms
+ GET /_next/static/chunks/app/error.js 404 in 35ms
+ GET /_next/static/chunks/app/not-found.js 404 in 30ms
+ GET /_next/static/chunks/app/global-error.js 404 in 29ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 52ms
+ GET /chat 200 in 43ms
+ GET /_next/static/css/app/layout.css?v=1775287641088 404 in 33ms
+ GET /_next/static/chunks/main-app.js?v=1775287641088 404 in 34ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 33ms
+ GET /_next/static/chunks/app/error.js 404 in 32ms
+ GET /_next/static/chunks/app/not-found.js 404 in 29ms
+ GET /_next/static/chunks/app/global-error.js 404 in 44ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 42ms
+ GET /chat 200 in 84ms
+ GET /_next/static/css/app/layout.css?v=1775287641268 404 in 17ms
+ GET /_next/static/chunks/main-app.js?v=1775287641268 404 in 36ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 36ms
+ GET /_next/static/chunks/app/error.js 404 in 35ms
+ GET /_next/static/chunks/app/global-error.js 404 in 31ms
+ GET /_next/static/chunks/app/not-found.js 404 in 30ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 16ms
+ GET /chat 200 in 40ms
+ GET /_next/static/css/app/layout.css?v=1775287641443 404 in 23ms
+ GET /_next/static/chunks/main-app.js?v=1775287641443 404 in 36ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 35ms
+ GET /_next/static/chunks/app/error.js 404 in 33ms
+ GET /_next/static/chunks/app/not-found.js 404 in 31ms
+ GET /_next/static/chunks/app/global-error.js 404 in 71ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 70ms
+ GET / 307 in 122ms
+ GET /chat 200 in 62ms
+ GET /_next/static/css/app/layout.css?v=1775287647779 404 in 48ms
+ GET /_next/static/chunks/main-app.js?v=1775287647779 404 in 31ms
+ GET /_next/static/chunks/app/error.js 404 in 28ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 29ms
+ GET /_next/static/chunks/app/not-found.js 404 in 27ms
+ GET /_next/static/chunks/app/global-error.js 404 in 25ms
+ GET /_next/static/chunks/app/chat/page.js 404 in 70ms
+ ✓ Compiled in 194ms (808 modules)
