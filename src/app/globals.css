@@ -98,6 +98,20 @@ a {
   font-size: 0.85rem;
 }
 
+.password-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.password-hint.warn {
+  color: var(--danger);
+}
+
+.password-hint.ok {
+  color: #9be3a8;
+}
+
 .auth-submit,
 .composer button,
 .new-chat-btn,

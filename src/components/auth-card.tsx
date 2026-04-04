@@ -12,8 +12,10 @@ export function AuthCard() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [pwFocused, setPwFocused] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const MIN_PASSWORD_LENGTH = 8;
 
   const canSubmit = useMemo(() => {
     if (!email.trim() || !password.trim()) return false;
@@ -106,11 +108,19 @@ export function AuthCard() {
             autoComplete={mode === "login" ? "current-password" : "new-password"}
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+            onFocus={() => setPwFocused(true)}
+            onBlur={() => setPwFocused(false)}
             placeholder="••••••••"
             minLength={8}
             required
           />
         </label>
+
+        {mode === "signup" && (pwFocused || password.length > 0) && (
+          <p className={`password-hint ${password.length >= MIN_PASSWORD_LENGTH ? "ok" : "warn"}`}>
+            Password must be at least {MIN_PASSWORD_LENGTH} characters.
+          </p>
+        )}
 
         {error && <p className="auth-error">{error}</p>}
 
