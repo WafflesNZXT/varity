@@ -127,6 +127,18 @@ a {
   transition: 0.18s ease;
 }
 
+.btn-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
 .auth-submit,
 .composer button,
 .new-chat-btn {
@@ -190,6 +202,9 @@ a {
 .brand {
   margin: 0;
   font-size: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
 .brand-sub {
@@ -200,6 +215,7 @@ a {
 
 .new-chat-btn {
   width: 100%;
+  justify-content: center;
 }
 
 .sidebar-nav {
@@ -214,6 +230,9 @@ a {
   border-color: transparent;
   color: #d0dbf7;
   padding: 0.6rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-btn.active,
@@ -340,7 +359,6 @@ a {
 .mobile-menu-btn {
   width: 42px;
   height: 42px;
-  font-size: 1.2rem;
   line-height: 1;
   display: inline-flex;
   align-items: center;
@@ -353,6 +371,9 @@ a {
   background: var(--accent);
   border-color: transparent;
   color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
 .mobile-chat-title {
@@ -566,6 +587,11 @@ a {
 
 .composer button {
   justify-self: end;
+}
+
+.composer button .icon {
+  width: 15px;
+  height: 15px;
 }
 
 .muted {

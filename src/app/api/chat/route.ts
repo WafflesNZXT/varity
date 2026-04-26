@@ -61,27 +61,75 @@ const STOP_WORDS = new Set([
   "the",
   "to",
   "we",
+  "me",
   "what",
   "with",
   "you",
-  "your"
+  "your",
+  "help",
+  "create",
+  "build",
+  "make",
+  "need",
+  "want",
+  "generate",
+  "write",
+  "show",
+  "code",
+  "hi",
+  "hello",
+  "hey"
 ]);
 
+const INTENT_PREFIXES = [
+  /^(hi|hello|hey|yo|hiya)\b[\s,.!?-]*/i,
+  /^help me\s+/i,
+  /^can you\s+/i,
+  /^please\s+/i,
+  /^i want to\s+/i,
+  /^i need to\s+/i,
+  /^how do i\s+/i,
+  /^how to\s+/i,
+  /^let'?s\s+/i
+];
+
+const ACRONYMS = new Set(["ai", "api", "ui", "ux", "sql", "saas"]);
+
+function toDisplayWord(word: string) {
+  if (ACRONYMS.has(word)) return word.toUpperCase();
+  return `${word[0]?.toUpperCase() ?? ""}${word.slice(1)}`;
+}
+
 function summarizeTitleFromPrompt(prompt: string) {
-  const words = prompt
+  let normalizedPrompt = prompt.trim();
+
+  let didStripPrefix = true;
+  while (didStripPrefix && normalizedPrompt.length > 0) {
+    didStripPrefix = false;
+
+    for (const prefix of INTENT_PREFIXES) {
+      const nextPrompt = normalizedPrompt.replace(prefix, "").trim();
+      if (nextPrompt !== normalizedPrompt) {
+        normalizedPrompt = nextPrompt;
+        didStripPrefix = true;
+      }
+    }
+  }
+
+  const words = normalizedPrompt
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, " ")
     .split(/\s+/)
     .filter(Boolean);
 
   const keywords = words.filter((word) => !STOP_WORDS.has(word));
-  const picked = (keywords.length >= 2 ? keywords : words).slice(0, 3);
+  const picked = (keywords.length >= 2 ? keywords : words).slice(0, 4);
 
   if (picked.length === 0) {
     return "New Chat";
   }
 
-  return picked.map((word) => `${word[0]?.toUpperCase() ?? ""}${word.slice(1)}`).join(" ");
+  return picked.map(toDisplayWord).join(" ");
 }
 
 export async function POST(request: Request) {

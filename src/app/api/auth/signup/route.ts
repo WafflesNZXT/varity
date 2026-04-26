@@ -4,11 +4,21 @@ import { dbQuery, ensureSchema } from "@/lib/db";
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as {
+    let body: {
       email?: string;
       password?: string;
       fullName?: string;
     };
+
+    try {
+      body = (await request.json()) as {
+        email?: string;
+        password?: string;
+        fullName?: string;
+      };
+    } catch {
+      return Response.json({ error: "Invalid request payload." }, { status: 400 });
+    }
 
     const email = body.email?.trim().toLowerCase();
     const password = body.password?.trim();

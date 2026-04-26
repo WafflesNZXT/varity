@@ -4,6 +4,17 @@ import { FormEvent, useEffect, useMemo, useRef, useState, useCallback } from "re
 import { signOut } from "next-auth/react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import {
+  LogOut,
+  Menu,
+  MessageSquareText,
+  Plus,
+  Search,
+  SendHorizontal,
+  Settings,
+  Sparkles,
+  Trash2
+} from "lucide-react";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -232,11 +243,15 @@ export function ChatDashboard({ userName, userEmail }: Props) {
             ×
           </button>
 
-          <h1 className="brand">Varity</h1>
-          <p className="brand-sub">AI SaaS Workspace</p>
+          <h1 className="brand">
+            <Sparkles className="icon" aria-hidden="true" />
+            <span>Varity</span>
+          </h1>
+          <p className="brand-sub">The only coding tool you need.</p>
 
-          <button type="button" className="new-chat-btn" onClick={createNewChat}>
-            + New Chat
+          <button type="button" className="new-chat-btn btn-with-icon" onClick={createNewChat}>
+            <Plus className="icon" aria-hidden="true" />
+            <span>New Chat</span>
           </button>
 
           <nav className="sidebar-nav" aria-label="Primary">
@@ -245,6 +260,7 @@ export function ChatDashboard({ userName, userEmail }: Props) {
               className={activeTab === "chats" ? "nav-btn active" : "nav-btn"}
               onClick={() => setActiveTab("chats")}
             >
+              <MessageSquareText className="icon" aria-hidden="true" />
               Your Chats
             </button>
             <button
@@ -252,6 +268,7 @@ export function ChatDashboard({ userName, userEmail }: Props) {
               className={activeTab === "search" ? "nav-btn active" : "nav-btn"}
               onClick={() => setActiveTab("search")}
             >
+              <Search className="icon" aria-hidden="true" />
               Search Chats
             </button>
             <button
@@ -259,6 +276,7 @@ export function ChatDashboard({ userName, userEmail }: Props) {
               className={activeTab === "settings" ? "nav-btn active" : "nav-btn"}
               onClick={() => setActiveTab("settings")}
             >
+              <Settings className="icon" aria-hidden="true" />
               Settings
             </button>
           </nav>
@@ -310,8 +328,13 @@ export function ChatDashboard({ userName, userEmail }: Props) {
             <p className="account-name">{userName}</p>
             <p className="account-email">{userEmail}</p>
           </div>
-          <button type="button" className="logout-btn" onClick={() => signOut({ callbackUrl: "/" })}>
-            Log Out
+          <button
+            type="button"
+            className="logout-btn btn-with-icon"
+            onClick={() => signOut({ callbackUrl: "/" })}
+          >
+            <LogOut className="icon" aria-hidden="true" />
+            <span>Log Out</span>
           </button>
         </div>
       </aside>
@@ -326,14 +349,15 @@ export function ChatDashboard({ userName, userEmail }: Props) {
             aria-controls="mobile-sidebar"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
-            ☰
+            <Menu className="icon" aria-hidden="true" />
           </button>
 
           {activeChat ? (
             <p className="mobile-chat-title">{activeChat.title}</p>
           ) : (
-            <button type="button" className="mobile-new-chat-btn" onClick={createNewChat}>
-              + New Chat
+            <button type="button" className="mobile-new-chat-btn btn-with-icon" onClick={createNewChat}>
+              <Plus className="icon" aria-hidden="true" />
+              <span>New Chat</span>
             </button>
           )}
         </div>
@@ -346,8 +370,9 @@ export function ChatDashboard({ userName, userEmail }: Props) {
             </p>
           </div>
           {activeChatId && (
-            <button type="button" className="danger-btn" onClick={deleteActiveChat}>
-              Delete Chat
+            <button type="button" className="danger-btn btn-with-icon" onClick={deleteActiveChat}>
+              <Trash2 className="icon" aria-hidden="true" />
+              <span>Delete Chat</span>
             </button>
           )}
         </header>
@@ -416,8 +441,9 @@ export function ChatDashboard({ userName, userEmail }: Props) {
             placeholder="Message Varity..."
             rows={3}
           />
-          <button type="submit" disabled={sending || !prompt.trim()}>
-            {sending ? "Thinking..." : "Send"}
+          <button type="submit" disabled={sending || !prompt.trim()} className="btn-with-icon">
+            <SendHorizontal className="icon" aria-hidden="true" />
+            <span>{sending ? "Thinking..." : "Send"}</span>
           </button>
         </form>
 
